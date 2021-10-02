@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Tracker|Quicky</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-warning position-nav" style="position: fixed;width: 100%;z-index: 3;">
+        <div class="logo">
+            <a class ="navbar-brand " href="#"><h4 class="right" style="overflow-y: hidden; padding-right: 40px; font-family: 'Dancing Script', cursive;"><span style="color: cyan;">Quicky</span> Weather Tracker</h4></a>
+        </div>
+
+        <button class="navbar-toggler", data-toggle="collapse" and data-target="#collapseme">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" style="transition: 0.8s;" id ="collapseme">
+            <ul class ="navbar-nav right">
+                <li class = "nav-item float-right"><a class ="nav-link" href="#div1">Weather Tracker</a></li>
+                <li class = "nav-item float-right"><a class ="nav-link" href="#slide_toggle">Know us</a></li>
+                <li class = "nav-item float-right"><a class ="nav-link" href="#map">Google Maps</a></li>
+                <li class = "nav-item float-right"><a class ="nav-link" href="#contact">Contact the developer</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <div style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(sky2.jpg);background-repeat: no-repeat;background-size: cover; padding-left:20px; padding: 20px;display: flex;padding-top: 110px;" id="div1">
+        <div id ="main_div" align = 'center' style="margin-bottom: 20px;"class="bg-light" >
+            <div class = "title">
+                <p><span id ="header">Today's Weather </span><br><small style="font-size: 0.8rem;font-weight: lighter;">Powered by</small> <br><img style="width:70px;height:70px;" src="logo_128.png" alt="logo"></p>
+            </div>
+            <div id ="sec_div">
+                <div id = "icon">
+                    <img src="unknown.png">
+                </div>
+                <div id ="notify"> </div>
+                <div id ="temperature">
+                    <p>- ° <span>C</span></p>
+                </div>
+                <div id = "description">
+                    <p>__  __</p>
+                </div>
+                
+                <div id ="humidity">
+                    <p> __ __</p>
+                </div>
+                <div id ="pressure">
+                    <p> __ __</p>
+                </div>
+                <div id="location">
+                    <p> __ __</p>
+                </div>
+            </div>
+        </div>
+        <div style="padding-left: 30px;align-items: flex-end;" class ="form1">
+            <form action="">
+                <label for="input_city" class="text-light">Enter the city to navigate :</label><input type="text" class="form-control" name="input_text" style="width:80%;">
+                <div style="display: flex;">
+                    <div>
+                        <input type ="button" value ="Submit" id="user_submit" name="submit" class="btn btn-primary" style="margin-top: 20px;">
+                    </div>
+                    <div>
+                        <input type="reset" class="btn btn-warning" name ="reset" value="Reset" style="margin-top: 20px;margin-left:40px;" >
+
+                    </div>
+                </div>
+            </form>
+            <h5 style="margin:30px 5px;color: aliceblue;overflow-y: hidden;font-size: 1rem;">Reload this page : </h5>
+            <button class="btn btn-light" style="margin: 0px 60px;"><i class="fa fa-refresh" aria-hidden="true" onclick="load_()"></i></button>
+            <br><br>
+            <p style="color: blanchedalmond;">
+                <strong>Last updated : </strong> 
+            <small id ="time"></small>
+            </p>
+        </div>
+    </div>
+    <div style="background-color: slategrey;color: snow; padding: 20px;">
+        <p style="border: 1px solid grey;margin:0px 60px; border-radius: 5px;background-color: mediumslateblue; box-shadow: 6px 4px 6px lightgrey; font-size: 1.5rem;" align = "center" id ="slide_toggle"> Click to know more about us:</p>
+    </div>
+
+    <div id ="know_us_div">
+        <div id="know_us" align="center" style="color:white;margin:5px;background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)),url(g_map2.jpg);background-repeat: no-repeat;background-size: cover;" >
+        
+            <div style="padding:20px;text-align: justify;">
+                <h4 style="font-family: cursive; color: cyan;overflow-y: hidden;">Quicky</h4><br>
+                
+                <h5 style="text-decoration: underline;overflow-y: hidden;">Know us </h5>
+                <br>
+                <p>Quicky provides easy access to current Weather and Location binded together on same page.<br><br>
+                    This website has been developed by  <strong>Pragya Mukherjee</strong>, 
+                    an ethusiastic junior developer,<br> whose passion is front-end Development,
+                    Data Science and ML. <br><br>
+                <strong><i>More about Pragya:</i></strong><br>
+                <br>
+                <strong>Personal Portfolio : <a href="https://mpragya-20.github.io/pragyamukherjee.github.io/" target="_blank"> Click </a></strong><br>
+                <strong>Blogs : <a href="https://coderspacket.com/contributor/MPragya" target="_blank"> Click </a></strong>
+                <br>
+                </p>
+                <p>She is a 2nd year student...loves to create something new!</p>
+                <br><br><br><br><br>
+                <small>Note : This page has been created for development purposes only!</small>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id ="contact" style="background-color: teal;padding: 60px;margin-top:5px;color:white" align="left">
+        <p><small>This website has been developed by Pragya Mukherjee. <br></small></p>
+        <small class="text-white">&copy; 2021 Pragya Mukherjee. All rights reserved.</small>
+            <div align="center"><a class="footer-social" href="https://linkedin.com/in/pragyamukherjee"target="_blank" style="color: white;"><i style="padding-right: 20px;" class="fa fa-linkedin" aria-hidden="true"></i></a><a href="https://github.com/MPragya-20" target="_blank" class="footer-social" style="color: white; padding-right: 20px;" ><i class="fa fa-github" aria-hidden="true"></i></a><a class="footer-social"href="https://images-na.ssl-images-amazon.com/images/I/61ZmA1UkQBL._AC_SL1000_.jpg"target="_blank" style="color: white;"><i style="padding-right: 20px;" class="fa fa-instagram" aria-hidden="true"></i></a><a class="footer-social" style="color: white;" href="https://images-na.ssl-images-amazon.com/images/I/61ZmA1UkQBL._AC_SL1000_.jpg" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+    </div>
+
+
+    <script src = "config.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $("#slide_toggle").click(function(){
+                $('#know_us_div').slideToggle(3000);
+            });
+        });
+        $(document).ready(function(){
+            window.onload =()=>{
+                var d =new Date();
+                $("#time").html(d);
+            }
+        });
+        function load_(){window.location.reload();}
+        
+    </script>
+
+
+    
+    <script src="app.js"></script>
+</body>
+</html>
